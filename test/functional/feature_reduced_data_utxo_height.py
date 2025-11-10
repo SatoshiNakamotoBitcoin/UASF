@@ -326,7 +326,7 @@ class ReducedDataUTXOHeightTest(BitcoinTestFramework):
         block = self.create_test_block([mixed_tx])
         peer.send_blocks_and_test([block], node, success=False, reject_reason='mandatory-script-verify-flag-failed')
 
-        self.log.info(f"✓ SUCCESS: Mixed transaction REJECTED (new input violated rules, even though old input was exempt)")
+        self.log.info("✓ SUCCESS: Mixed transaction REJECTED (new input violated rules, even though old input was exempt)")
 
         # Restore chain
         node.reconsiderblock(current_tip2)
